@@ -5,3 +5,4 @@ public class EnemyUnit extends UnitLeaf {
         super(name, health, attackPower);
     }
 }
+
