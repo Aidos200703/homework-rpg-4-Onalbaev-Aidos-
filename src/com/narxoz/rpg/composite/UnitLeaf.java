@@ -15,8 +15,13 @@ public abstract class UnitLeaf implements CombatNode {
     }
 
     @Override
-    public String getName() {
-        return name;
+    public void takeDamage(int amount) {
+        health = Math.max(0, health - amount);
+    }
+
+    @Override
+    public boolean isAlive() {
+        return health > 0;
     }
 
     @Override
@@ -30,16 +35,8 @@ public abstract class UnitLeaf implements CombatNode {
     }
 
     @Override
-    public void takeDamage(int amount) {
-        if (!isAlive()) {
-            return;
-        }
-        health = Math.max(0, health - Math.max(0, amount));
-    }
-
-    @Override
-    public boolean isAlive() {
-        return health > 0;
+    public String getName() {
+        return name;
     }
 
     @Override
