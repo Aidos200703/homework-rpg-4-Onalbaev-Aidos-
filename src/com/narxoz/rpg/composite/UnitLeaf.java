@@ -14,22 +14,7 @@ public abstract class UnitLeaf implements CombatNode {
         this.attackPower = attackPower;
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public int getAttackPower() {
-        return isAlive() ? attackPower : 0;
-    }
-
-    @Override
+        @Override
     public void takeDamage(int amount) {
         if (!isAlive()) {
             return;
@@ -51,4 +36,21 @@ public abstract class UnitLeaf implements CombatNode {
     public void printTree(String indent) {
         System.out.println(indent + "- " + name + " [HP=" + health + ", ATK=" + attackPower + "]");
     }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public int getAttackPower() {
+        return isAlive() ? attackPower : 0;
+    }
+
+
 }
