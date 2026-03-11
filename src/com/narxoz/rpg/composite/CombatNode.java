@@ -10,5 +10,4 @@ public interface CombatNode {
     String getName();
     int getHealth();
     int getAttackPower();
-
 }
